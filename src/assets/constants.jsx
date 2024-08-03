@@ -1,0 +1,1 @@
+export const BG_URL = "https://live.staticflickr.com/7706/26751237322_5a52540ea3_h.jpg";
