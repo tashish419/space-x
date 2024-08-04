@@ -10,7 +10,7 @@ const LaunchFacilitiesCard = () => {
   return (
     <div className="max-h-72 overflow-y-scroll scrollbar">
       <h2 className="text-xl font-bold mb-2">Launch facilities</h2>
-      <div className="mb-4 relative">
+      <div className="mb-2 relative">
         <img
           src="https://live.staticflickr.com/65535/50137510881_3f675bb620_h.jpg"
           alt="Cape Canaveral"
@@ -45,7 +45,7 @@ const LaunchFacilitiesCard = () => {
           </div>
         </div>
       </div>
-      <div className="mb-4 relative">
+      <div className="mb-2 relative">
         <img
           src="https://live.staticflickr.com/65535/50906488116_c44db82fc1_k.jpg"
           alt="Starbase Boca Chica"
@@ -81,7 +81,7 @@ const LaunchFacilitiesCard = () => {
         </div>
       </div>
       {isExpanded && (
-        <div className="mb-4 relative">
+        <div className="mb-2 relative">
           <img
             src="https://live.staticflickr.com/982/42290930181_480260c49b_k.jpg"
             alt="Vandenberg Base"

@@ -1,2 +1,0 @@
-// export const BG_URL = "https://live.staticflickr.com/7706/26751237322_5a52540ea3_h.jpg";
-// export const SPACEX_LOGO = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe3f7gzpc_uvMrgJ47SkNC_A7-MLlIhCrWkg&s";

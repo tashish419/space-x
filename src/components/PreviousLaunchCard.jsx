@@ -7,44 +7,30 @@ const PreviousLaunchCard = () => {
   const previousLaunch = useSelector(
     (store) => store?.launch?.previousLaunch[0]
   );
-  console.log(previousLaunch);
 
-  //   const getPreviousLaunch = async () => {
-  //     const data = await fetch("https://api.spacexdata.com/v3/launches/past");
-
-  //     // const json = await data.json();
-  //     // console.log(json);
-  //     console.log(data);
-
-  //     // dispatch(addPreviousLaunch(json));
-  //   };
-
-  //   useEffect(() => {
-  //     getPreviousLaunch();
-  //   }, []);
   usePreviousLaunch();
 
   return (
     <>
-      <h2 className="text-xl font-bold mb-4">Upcoming launch</h2>
+      <h2 className="text-xl font-bold mb-2">Previous launch</h2>
       <div className="flex justify-normal">
         <div className=" w-1/2">
           <div className="mb-2">
             <h4 className=" text-xs font-thin text-gray-200">MISSION NAME</h4>
             <h3 className="text-sm font-semibold">
-              {/* {upcomingLaunch?.mission_name} */}
+              {previousLaunch?.mission_name}
             </h3>
           </div>
           <div className="mb-2">
             <h4 className=" text-xs font-thin text-gray-200">ROCKET</h4>
             <h3 className="text-sm font-semibold">
-              {/* {upcomingLaunch?.rocket?.rocket_name} */}
+              {previousLaunch?.rocket?.rocket_name}
             </h3>
           </div>
           <div className="mb-2">
             <h4 className=" text-xs font-thin text-gray-200">FLIGHT NUMBER</h4>
             <h3 className="text-sm font-semibold">
-              {/* {upcomingLaunch?.flight_number} */}
+              {previousLaunch?.flight_number}
             </h3>
           </div>
           <div className="mb-2">
@@ -79,7 +65,7 @@ const PreviousLaunchCard = () => {
           <div className="mt-12">
             <h4 className=" text-xs font-thin text-gray-200">FLIGHT NUMBER</h4>
             <h3 className="text-sm font-semibold">
-              {/* {upcomingLaunch?.launch_site?.site_name} */}
+              {previousLaunch?.launch_site?.site_name}
             </h3>
           </div>
         </div>

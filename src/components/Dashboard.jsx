@@ -6,7 +6,7 @@ import bgImg from "../assets/img/bg1.jpg";
 
 const Dashboard = () => {
   return (
-    <div className="flex-1bg-gradient-to-r from-gray-700 via-gray-900 to-black text-white relative rounded-r-lg scrollbar">
+    <div className="flex-1 bg-gradient-to-r shadow-lg from-gray-700 via-gray-900 to-black text-white relative rounded-r-lg scrollbar">
       <img
         src={bgImg}
         alt="Bg-img"
