@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { SPACEX_LOGO } from "../assets/constants";
+import SPACEX_LOGO  from "../assets/img/logo.png";
 
 const Sidebar = () => {
   return (
@@ -13,7 +13,7 @@ const Sidebar = () => {
         <nav className="mt-20 ml-5">
           <ul>
             <li className="mb-4 text-2xl font-semibold hover:bg-zinc-100 hover:rounded-lg">
-              <Link to="/dashboard">Dashboard</Link>
+              <Link to="/">Dashboard</Link>
             </li>
             <li className="mb-4 text-2xl hover:bg-zinc-100 hover:rounded-lg">
               <Link to="/rockets">Rockets</Link>

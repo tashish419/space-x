@@ -8,7 +8,7 @@ const LaunchFacilitiesCard = () => {
   };
 
   return (
-    <div>
+    <div className="max-h-72 overflow-y-scroll scrollbar">
       <h2 className="text-xl font-bold mb-2">Launch facilities</h2>
       <div className="mb-4 relative">
         <img

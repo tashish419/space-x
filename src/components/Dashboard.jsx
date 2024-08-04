@@ -1,19 +1,19 @@
-import { BG_URL } from "../assets/constants";
 import UpcomingLaunchCard from "./UpcomingLaunchCard";
 import LaunchFacilitiesCard from "./LaunchFacilitiesCard";
 import StarlinkCard from "./StarlinkCard";
 import PreviousLaunchCard from "./PreviousLaunchCard";
+import bgImg from "../assets/img/bg1.jpg";
 
 const Dashboard = () => {
   return (
-    <div className="flex-1 p-6 bg-gradient-to-r from-gray-700 via-gray-900 to-black text-white relative rounded-r-lg overflow-y-hidden">
+    <div className="flex-1bg-gradient-to-r from-gray-700 via-gray-900 to-black text-white relative rounded-r-lg scrollbar">
       <img
-        src={BG_URL}
+        src={bgImg}
         alt="Bg-img"
-        className="absolute inset-0 w-[98%] h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover rounded-r-lg"
       />
-      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-3">
+      <div className="absolute inset-0 bg-black bg-opacity-50 rounded-r-lg"></div>
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-3 overflow-y-scroll scrollbar  3xl:place-items-center rounded-r-lg max-h-full">
         {/* upcoming launch */}
         <div className="p-6 bg-black rounded-lg shadow-lg bg-opacity-60 text-white">
           <UpcomingLaunchCard />
