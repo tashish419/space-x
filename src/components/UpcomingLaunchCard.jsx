@@ -1,20 +1,7 @@
-import { useEffect } from "react";
+import useUpcomingLaunch from "../hooks/useUpcomingLaunch";
 
 const UpcomingLaunchCard = () => {
-
-  
-  const getUpcomingLaunch = async () => {
-      const data = await fetch("https://api.spacexdata.com/v3/launches/upcoming");
-
-      const json = await data.json();
-      console.log(json);
-
-      const  {flight_number, rocket, mission_name} = json[0];
-  }
-
-  useEffect(()=>{
-    getUpcomingLaunch()
-  },[])
+  useUpcomingLaunch();
 
   return (
     <>
@@ -22,7 +9,7 @@ const UpcomingLaunchCard = () => {
       <div className="flex justify-normal">
         <div className=" w-1/2">
           <div>
-            <h4 className=" text-xs font-thin text-gray-200">{mission_name}</h4>
+            <h4 className=" text-xs font-thin text-gray-200">{}</h4>
             <p></p>
           </div>
           <div></div>
