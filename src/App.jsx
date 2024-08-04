@@ -3,7 +3,7 @@ import Sidebar from "./components/Sidebar";
 
 function App() {
   return (
-    <div className="flex h-screen mx-40 my-14 rounded-lg">
+    <div className="flex h-[85vh] mx-40 my-14">
       <Sidebar/>
       <Outlet/>
     </div>
