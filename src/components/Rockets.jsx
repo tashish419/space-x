@@ -2,18 +2,27 @@ import { useState } from "react";
 import bgImg from "../assets/img/bg1.jpg";
 import useRocketsData from "../hooks/useRocketsData";
 import { useSelector } from "react-redux";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css";
 
 const Rockets = () => {
   const [selectedRocket, setSelectedRocket] = useState(null);
+  const [showPhotos, setShowPhotos] = useState(false);
   const rocketsData = useSelector((store) => store?.rockets?.rockets);
 
   const openModal = (rocket) => {
     setSelectedRocket(rocket);
+    setShowPhotos(false);
   };
 
   const closeModal = () => {
     setSelectedRocket(null);
+    setShowPhotos(false);
   };
+
+  const allImages = rocketsData.reduce((acc, element) => {
+    return acc.concat(element?.flickr_images);
+  }, []);
 
   useRocketsData();
 
@@ -69,27 +78,52 @@ const Rockets = () => {
               <h2 className="text-black font-bold text-2xl">
                 {selectedRocket.name}
               </h2>
-              <h2 className="text-black font-semibold text-2xl hover:bg-zinc-100 hover:rounded-lg hover:px-1 hover:cursor-pointer ">
+              <h2
+                className={`text-black font-semibold text-2xl hover:bg-zinc-100 hover:rounded-lg hover:px-1 hover:cursor-pointer ${
+                  showPhotos ? "text-gray-400" : ""
+                }`}
+                onClick={() => setShowPhotos(false)}
+              >
                 Overview
               </h2>
-              <h2 className="text-gray-400 font-semibold text-2xl hover:bg-zinc-100 hover:rounded-lg hover:px-1 hover:cursor-pointer ">
+              <h2
+                className={`text-black font-semibold text-2xl hover:bg-zinc-100 hover:rounded-lg hover:px-1 hover:cursor-pointer ${
+                  showPhotos ? "" : "text-gray-400"
+                }`}
+                onClick={() => setShowPhotos(true)}
+              >
                 Photos
               </h2>
             </div>
-            
-            <div className="flex gap-4">
-              <img
-                src={selectedRocket.flickr_images[0]}
-                alt="rocket-img-detail"
-                className="rounded-lg h-72 w-1/3 object-cover shadow-lg"
-              />
-              <div className="shadow-xl bg-white p-4">
-                <h4 className="text-gray-700 font-semibold mb-2">
-                  DESCRIPTION
-                </h4>
-                <p className="text-gray-600">{selectedRocket.description}</p>
+            {showPhotos ? (
+              <div className="shadow-xl bg-white mx-auto">
+                <Swiper spaceBetween={30} slidesPerView={2}>
+                  {allImages.map((img, idx) => (
+                    <SwiperSlide key={idx}>
+                      <img
+                        src={img}
+                        alt={`slide-${idx}`}
+                        className="rounded-lg object-cover"
+                      />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
               </div>
-            </div>
+            ) : (
+              <div className="flex gap-4">
+                <img
+                  src={selectedRocket.flickr_images[0]}
+                  alt="rocket-img-detail"
+                  className="rounded-lg h-72 w-1/3 object-cover shadow-lg"
+                />
+                <div className="shadow-xl bg-white p-4">
+                  <h4 className="text-gray-700 font-semibold mb-2">
+                    DESCRIPTION
+                  </h4>
+                  <p className="text-gray-600">{selectedRocket.description}</p>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       )}
@@ -98,84 +132,3 @@ const Rockets = () => {
 };
 
 export default Rockets;
-
-// import { useState } from "react";
-// import { useSelector } from "react-redux";
-// import useRocketsData from "../hooks/useRocketsData";
-
-// const Rockets = () => {
-//   const [selectedRocket, setSelectedRocket] = useState(null);
-//   const rocketsData = useSelector((store) => store?.rockets?.rockets);
-
-//   useRocketsData();
-//   const openModal = (rocket) => {
-//     setSelectedRocket(rocket);
-//   };
-
-//   const closeModal = () => {
-//     setSelectedRocket(null);
-//   };
-
-//   return (
-//     <div className="relative">
-//       <div className="flex justify-around gap-4">
-//         {rocketsData.map((rocket, index) => (
-//           <div
-//             key={rocket?.id}
-//             className="relative overflow-hidden h-72 w-60 cursor-pointer"
-//             onClick={() => openModal(rocket)}
-//           >
-//             <h2 className="text-white font-semibold text-lg mb-2">
-//               {rocket.rocket_name}
-//             </h2>
-//             <img
-//               src={rocket.img}
-//               alt={`rocket-img-${index}`}
-//               loading="lazy"
-//               className="rounded-lg h-full object-cover shadow-lg transition-transform duration-300 hover:scale-110"
-//             />
-//             <div
-//               className={`p-1 absolute z-10 bottom-0 left-0 rounded-lg ${
-//                 rocket.status === "Active" ? "bg-green-600" : "bg-yellow-600"
-//               } bg-opacity-70 flex flex-col justify-start items-start my-1 w-1/4`}
-//             >
-//               <h4>STATUS</h4>
-//               <p>{rocket.status}</p>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-
-//       {selectedRocket && (
-//         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-//           <div className="bg-white rounded-lg p-4 max-w-3xl w-full relative">
-//             <button
-//               onClick={closeModal}
-//               className="absolute top-2 right-2 text-gray-700 text-2xl"
-//             >
-//               &times;
-//             </button>
-//             <h2 className="text-black font-semibold text-2xl mb-4">
-//               {selectedRocket.rocket_name}
-//             </h2>
-//             <div className="flex gap-4">
-//               <img
-//                 src={selectedRocket.img}
-//                 alt="rocket-img-detail"
-//                 className="rounded-lg h-72 w-1/3 object-cover shadow-lg"
-//               />
-//               <div>
-//                 <h4 className="text-gray-700 font-semibold mb-2">
-//                   DESCRIPTION
-//                 </h4>
-//                 <p className="text-gray-600">{selectedRocket.description}</p>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default Rockets;
