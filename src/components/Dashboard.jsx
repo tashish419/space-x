@@ -10,6 +10,7 @@ const Dashboard = () => {
       <img
         src={bgImg}
         alt="Bg-img"
+        loading="lazy"
         className="absolute inset-0 w-full h-full object-cover rounded-r-lg"
       />
       <div className="absolute inset-0 bg-black bg-opacity-50 rounded-r-lg"></div>

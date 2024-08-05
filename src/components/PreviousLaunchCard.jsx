@@ -1,7 +1,7 @@
-// import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import usePreviousLaunch from "../hooks/usePreviousLaunch";
+import {launchLogoImg} from "../assets/img/launchCardLogo.png";
 
 const PreviousLaunchCard = () => {
   const previousLaunch = useSelector(
@@ -57,7 +57,7 @@ const PreviousLaunchCard = () => {
             <h4 className=" text-xs font-thin text-gray-200">TIME(UTC)</h4>
             <div className=" w-20 my-2">
               <img
-                src="https://images2.imgbox.com/eb/d8/D1Yywp0w_o.png"
+                src={launchLogoImg}
                 alt="Rocket Logo"
               />
             </div>

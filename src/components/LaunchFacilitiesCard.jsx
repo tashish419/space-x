@@ -1,4 +1,7 @@
 import { useState } from "react";
+import {launchImage1} from "../assets/img/launchImg1";
+import {launchImage2} from "../assets/img/launchImg1";
+import {launchImage3} from "../assets/img/launchImg1";
 
 const LaunchFacilitiesCard = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -12,7 +15,7 @@ const LaunchFacilitiesCard = () => {
       <h2 className="text-xl font-bold mb-2">Launch facilities</h2>
       <div className="mb-2 relative">
         <img
-          src="https://live.staticflickr.com/65535/50137510881_3f675bb620_h.jpg"
+          src={launchImage1}
           alt="Cape Canaveral"
           className="w-full h-24 object-cover rounded-lg"
         />
@@ -47,7 +50,7 @@ const LaunchFacilitiesCard = () => {
       </div>
       <div className="mb-2 relative">
         <img
-          src="https://live.staticflickr.com/65535/50906488116_c44db82fc1_k.jpg"
+          src={launchImage2}
           alt="Starbase Boca Chica"
           className="w-full h-24 object-cover rounded-lg"
         />
@@ -83,7 +86,7 @@ const LaunchFacilitiesCard = () => {
       {isExpanded && (
         <div className="mb-2 relative">
           <img
-            src="https://live.staticflickr.com/982/42290930181_480260c49b_k.jpg"
+            src={launchImage3}
             alt="Vandenberg Base"
             className="w-full h-24 object-cover rounded-lg"
           />

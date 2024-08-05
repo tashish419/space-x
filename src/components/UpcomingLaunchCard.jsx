@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-// import useUpcomingLaunch from "../hooks/useUpcomingLaunch";
 import useUpcomingLaunch from "../hooks/useUpcomingLaunch";
 import { useSelector } from "react-redux";
 
@@ -8,11 +7,8 @@ const UpcomingLaunchCard = () => {
     (store) => store?.launch?.upcomingLaunch[0]
   );
 
- 
-
   useUpcomingLaunch();
-  
-  
+   
   return (
     <>
       <h2 className="text-xl font-bold mb-4">Upcoming launch</h2>
