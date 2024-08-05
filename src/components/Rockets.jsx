@@ -103,7 +103,7 @@ const Rockets = () => {
                       <img
                         src={img}
                         alt={`slide-${idx}`}
-                        className="rounded-lg object-cover"
+                        className="rounded-lg object-cover w-[100%] h-[100%]"
                       />
                     </SwiperSlide>
                   ))}
