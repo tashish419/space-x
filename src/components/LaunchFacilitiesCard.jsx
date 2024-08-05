@@ -1,7 +1,7 @@
 import { useState } from "react";
-import {launchImage1} from "../assets/img/launchImg1";
-import {launchImage2} from "../assets/img/launchImg1";
-import {launchImage3} from "../assets/img/launchImg1";
+import launchImage1 from "../assets/img/launchImg1.jpg";
+import launchImage2 from "../assets/img/launchImg1.jpg";
+import launchImage3 from "../assets/img/launchImg1.jpg";
 
 const LaunchFacilitiesCard = () => {
   const [isExpanded, setIsExpanded] = useState(false);

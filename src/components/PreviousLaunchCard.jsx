@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import usePreviousLaunch from "../hooks/usePreviousLaunch";
-import {launchLogoImg} from "../assets/img/launchCardLogo.png";
+import launchLogoImg from "../assets/img/launchCardLogo.png";
 
 const PreviousLaunchCard = () => {
   const previousLaunch = useSelector(
