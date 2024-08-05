@@ -22,12 +22,12 @@ const Rockets = () => {
             <h2 className="text-white font-semibold text-lg mb-2">
               {rocketsData[0]?.rocket_name}
             </h2>
-            <div className="relative h-72">
+            <div className="relative h-72 overflow-hidden rounded-lg">
               <img
                 src={rocketImg1}
                 alt="rocket-img-1"
                 loading="lazy"
-                className="rounded-lg h-full object-cover shadow-lg"
+                className="rounded-lg h-full object-cover shadow-lg transition-transform duration-300 hover:scale-110"
               />
               <div className="p-1 absolute z-10 bottom-2 left-2 rounded-lg bg-yellow-600 bg-opacity-70 flex flex-col justify-start items-start my-1">
                 <h4 className="text-xs font-semibold text-gray-400">STATUS</h4>
@@ -39,12 +39,12 @@ const Rockets = () => {
             <h2 className="text-white font-semibold text-lg mb-2">
               {rocketsData[1]?.rocket_name}
             </h2>
-            <div className="relative h-72">
+            <div className="relative h-72 overflow-hidden rounded-lg">
               <img
                 src={rocketImg2}
                 alt="rocket-img-2"
                 loading="lazy"
-                className="rounded-lg h-full object-cover shadow-lg"
+                className="rounded-lg h-full object-cover shadow-lg transition-transform duration-300 hover:scale-110"
               />
               <div className="p-1 absolute z-10 bottom-2 left-2 rounded-lg bg-green-600 bg-opacity-70 flex flex-col justify-start items-start my-1">
                 <h4 className="text-xs font-semibold text-gray-400">STATUS</h4>
@@ -56,12 +56,12 @@ const Rockets = () => {
             <h2 className="text-white font-semibold text-lg mb-2">
               {rocketsData[2]?.rocket_name}
             </h2>
-            <div className="relative h-72">
+            <div className="relative h-72 overflow-hidden rounded-lg">
               <img
                 src={rocketImg3}
                 alt="rocket-img-3"
                 loading="lazy"
-                className="rounded-lg h-full object-cover shadow-lg"
+                className="rounded-lg h-full object-cover shadow-lg transition-transform duration-300 hover:scale-110"
               />
               <div className="p-1 absolute z-10 bottom-2 left-2 rounded-lg bg-green-600 bg-opacity-70 flex flex-col justify-start items-start my-1">
                 <h4 className="text-xs font-semibold text-gray-400">STATUS</h4>
