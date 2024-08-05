@@ -57,8 +57,8 @@ const Rockets = () => {
       </div>
 
       {selectedRocket && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white rounded-lg p-4 max-w-4xl  w-full relative">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 shadow-lg">
+          <div className="bg-white rounded-lg px-10 py-8 max-w-4xl  w-full relative">
             <button
               onClick={closeModal}
               className="absolute top-2 right-2 text-gray-700 text-2xl"
@@ -72,18 +72,18 @@ const Rockets = () => {
               <h2 className="text-black font-semibold text-2xl hover:bg-zinc-100 hover:rounded-lg hover:px-1 hover:cursor-pointer ">
                 Overview
               </h2>
+              <h2 className="text-gray-400 font-semibold text-2xl hover:bg-zinc-100 hover:rounded-lg hover:px-1 hover:cursor-pointer ">
+                Photos
+              </h2>
             </div>
-            {/* <h2 className="text-black font-semibold text-2xl mb-4">
-              {selectedRocket.name}
-            </h2>
-            <h2 className="text-black font-semibold text-2xl mb-4">Overview</h2> */}
+            
             <div className="flex gap-4">
               <img
                 src={selectedRocket.flickr_images[0]}
                 alt="rocket-img-detail"
                 className="rounded-lg h-72 w-1/3 object-cover shadow-lg"
               />
-              <div>
+              <div className="shadow-xl bg-white p-4">
                 <h4 className="text-gray-700 font-semibold mb-2">
                   DESCRIPTION
                 </h4>
