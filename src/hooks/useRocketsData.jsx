@@ -6,7 +6,7 @@ const useRocketsData = () => {
   const dispatch = useDispatch();
 
   const getRocktesData = async () => {
-    const data = await fetch("https://api.spacexdata.com/v3/rockets");
+    const data = await fetch("https://api.spacexdata.com/v4/rockets");
     const json = await data.json();
     
     dispatch(addRockets(json));

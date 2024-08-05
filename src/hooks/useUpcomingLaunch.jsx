@@ -9,7 +9,7 @@ const useUpcomingLaunch = () => {
     const data = await fetch("https://api.spacexdata.com/v3/launches/upcoming");
 
     const json = await data.json();
-    console.log(json);
+    // console.log(json);
 
     dispatch(addUpcomingLaunch(json));
   };
